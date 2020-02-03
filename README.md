@@ -1,1 +1,3 @@
-A study demo of a community.\nUse Spring Boot, link:https://www.bilibili.com/video/av50200264
+A study demo of a community.
+
+Use Spring Boot, link:https://www.bilibili.com/video/av50200264
