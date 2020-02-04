@@ -1,2 +1,10 @@
 server:
   port: 10086
+
+github:
+  client:
+    id: 6ab47e4c530100275865
+    secret: 5b3d4a11820b01df03a8527d6987c0142c63a66b
+
+  redirect:
+    uri: http://localhost:10086/callback
