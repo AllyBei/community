@@ -8,3 +8,11 @@ github:
 
   redirect:
     uri: http://localhost:10086/callback
+
+
+spring:
+  datasource:
+    username: root
+    password: Hrs12345
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:22222/hrs_community

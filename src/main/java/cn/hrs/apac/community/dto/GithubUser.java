@@ -1,6 +1,7 @@
 package cn.hrs.apac.community.dto;
 
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 @Data
 /* Define github use information from API
