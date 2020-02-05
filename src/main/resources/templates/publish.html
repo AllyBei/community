@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Publish Contents</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js" typeof="jQuery"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+    <script src="js/bootstrap.min.js" type="application/javascript"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">HRS Community</span>
+            </button>
+            <a class="navbar-brand" href="#">HRS Community</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search Topics">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" th:if="${session.githubUser != null}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" th:text="${session.githubUser.getLogin()}">Me<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Messages</a></li>
+                        <li><a href="#">My profile</a></li>
+                        <li><a href="#">Log out</a></li>
+                    </ul>
+                </li>
+                <li th:if="${session.githubUser == null}">
+                    <a href="https://github.com/login/oauth/authorize?client_id=6ab47e4c530100275865&redirect_uri=http://localhost:10086/callback&scope=user&state=1">Login</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" >
+                <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Publish</h2>
+                <form action="/publish" method="post">
+                    <div class="form-group">
+                        <label for="title">Question title</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Question title...">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Question details</label>
+                        <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tag">Add tag</label>
+                        <input type="text" class="form-control" id="tag" name="tag" placeholder="Input tag, break up with , ">
+                    </div>
+                    <span>
+                    <button type="submit" class="btn btn-success">Publish Succeed</button>
+                </form>
+            </div>
+            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" >
+                <h3>Guide how to submit a question</h3>
+            </div>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
